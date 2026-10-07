@@ -80,6 +80,13 @@ h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 18px; color: var(--muted)
 @media (max-width: 700px) { .cv-frame { display: none !important; } }
 .cv-frame { width: 100%; height: 85vh; min-height: 560px; border: 1px solid var(--rule); background: var(--soft); display: block; }
 
+/* ---------- blue tab bar ---------- */
+.tabs { background: #00356b; border-bottom: 0; }
+.tab { color: #b7cbe6; padding: 12px 0; }
+.tab:hover { color: #fff; }
+.tab[aria-selected="true"] { color: #fff; border-bottom-color: #fff; }
+@media (prefers-color-scheme: dark) { .tabs { background: #12294a; } }
+
 footer { border-top: 1px solid var(--rule); padding: 18px 0 36px; color: var(--muted); font-size: .85rem; }
 
 @media print { .tabs, .cv-frame { display: none; } .panel[hidden] { display: block; } .abstract p { display: block; } }
