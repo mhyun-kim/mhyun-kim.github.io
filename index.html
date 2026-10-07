@@ -45,8 +45,8 @@
       <div class="text">
         <h1>Michelle <span style="white-space:nowrap">Hyun-Kim</span></h1>
         <p class="blurb">
-          Hello! I am a 5th year theory student at Yale University. I am interested in
-          contract theory and mechanism design. Feel free to reach out!
+          I am a 5th year Ph.D. candidate in economics at Yale University. I study microeconomic theory,
+          and I am interested in contract theory and mechanism design. I also like tennis!
         </p>
         <p class="contact"><a href="mailto:michelle.hyun@yale.edu">michelle.hyun@yale.edu</a></p>
       </div>
@@ -58,6 +58,7 @@
     <div class="wrap" role="tablist" aria-label="Sections">
       <button class="tab" role="tab" id="tab-research" aria-controls="research-panel" aria-selected="true">Research</button>
       <button class="tab" role="tab" id="tab-cv" aria-controls="cv-panel" aria-selected="false">CV</button>
+      <button class="tab" role="tab" id="tab-gwiet" aria-controls="gwiet-panel" aria-selected="false">GWiET</button>
     </div>
   </nav>
 
@@ -69,10 +70,11 @@
 
       <!-- To add a paper, copy this <article> block and edit it -->
       <article class="paper">
-        <p class="paper-title"><a href="files/Hyun-Kim_Intermediary_Rents.pdf">Intermediary Rents in Incentive Contracts</a></p>
+        <p class="paper-title"><a href="files/Hyun-Kim_Intermediary_Rents.pdf">Intermediary Rents in Incentive Contracts</a> <a class="pdf" href="files/Hyun-Kim_Intermediary_Rents.pdf">[PDF]</a></p>
         <p class="status">R&amp;R, <span>American Economic Review</span></p>
-        <p class="abstract">
-          <strong>Abstract:</strong> A principal hires an intermediary to incentivize an agent’s unobservable
+        <div class="abstract">
+          <p>
+            A principal hires an intermediary to incentivize an agent’s unobservable
           effort. Although the intermediary extracts rents, strengthening the agent’s outside option allows
           the principal to reclaim surplus. Consequently, the principal’s value and optimal contracts differ
           markedly from those in standard principal-agent models. Under intermediation, the principal’s
@@ -80,8 +82,8 @@
           that outside option is positive. Furthermore, equilibrium contract payments and effort are
           non-monotonic and discontinuous in the agent’s outside option. My results speak to welfare in
           labor markets and to the formation of contractual relationships within organizations.
-        </p>
-        <div class="links"><a href="files/Hyun-Kim_Intermediary_Rents.pdf">[PDF]</a></div>
+          </p>
+        </div>
       </article>
     </section>
 
@@ -96,11 +98,19 @@
       <iframe class="cv-frame" src="files/Michelle_HyunKim_CV.pdf" title="Curriculum Vitae of Michelle Hyun-Kim" loading="lazy"></iframe>
     </section>
 
+    <!-- ============ GWiET ============ -->
+    <section class="panel" id="gwiet-panel" role="tabpanel" aria-labelledby="tab-gwiet" hidden>
+      <p>
+        In 2025, I co-organized the Graduate Women in Economic Theory (GWiET) Conference at Yale University.
+        See the details <a href="https://cowles.yale.edu/gwiet2026" target="_blank" rel="noopener">here</a>.
+      </p>
+    </section>
+
     <footer>&copy; <span id="year">2026</span> Michelle Hyun-Kim</footer>
   </main>
 
   <script>
-    /* Tabs: also work with links like yoursite/#cv */
+    /* Tabs: also work with links like yoursite/#cv or yoursite/#gwiet */
     (function () {
       var tabs = document.querySelectorAll(".tab");
       function show(id, push) {
@@ -115,10 +125,11 @@
         t.addEventListener("click", function () { show(t.getAttribute("aria-controls").replace("-panel", ""), true); });
       });
       var start = location.hash.slice(1);
-      if (start === "cv" || start === "research") show(start, false);
+      var ids = ["research", "cv", "gwiet"];
+      if (ids.indexOf(start) > -1) show(start, false);
       window.addEventListener("hashchange", function () {
         var h = location.hash.slice(1);
-        if (h === "cv" || h === "research") show(h, false);
+        if (ids.indexOf(h) > -1) show(h, false);
       });
       document.getElementById("year").textContent = new Date().getFullYear();
     })();
